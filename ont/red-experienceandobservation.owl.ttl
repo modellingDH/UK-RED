@@ -1,0 +1,54 @@
+@prefix : <http://data.open.ac.uk/ontology/red/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix linkedevent: <http://linkedevent.org/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix hint: <http://www.bigdata.com/queryHints#> .
+@prefix ceo: <http://readit-project/ontology/> .
+@prefix reo: <http://readit-project/ont/datamodel#> .
+@prefix cdocreo: <http://dataforhistory.org/read-it-ongoing/class/> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@base <http://data.open.ac.uk/ontology/red/> .
+
+
+#################################################################
+#    Mappings
+#################################################################
+
+
+
+################# READ-IT Crowdsourcing Experience Ontology mappings ######################
+
+:Document rdfs:subClassOf ceo:CreativeWork .
+:Document owl:equivalentClass ceo:Resource .
+:Experience owl:equivalentClass ceo:Observation .
+
+
+################# READ-IT Reading Experience Ontology V2.0 mappings ######################
+
+foaf:Person owl:equivalentClass reo:Person .
+:Experience owl:equivalentClass reo:StateOfMind, reo:ReadingProcess .
+
+
+################# READ-IT CIDOC-CRM Reading Experience Ontology V1.2 mappings ######################
+
+:Religion owl:equivalentClass cdocreo:REO15 .
+:Address owl:equivalentClass cdocreo:REO9 .
+:Gender owl:equivalentClass cdocreo:REO5 .
+:Experience_Reader owl:equivalentClass cdocreo:REO12, cdocreo:REO2, crm:E7 .
+foaf:Person owl:equivalentClass crm:E21 .
+
+:originCountry owl:inverseOf cdocreo:readP2 .
+:occupation owl:equivalentProperty cdocreo:readP1 .
+:religion owl:inverseOf cdocreo:readP4 .
+
+:frequency owl:equivalentProperty cdocreo:E7 .
+:reader_engagement owl:equivalentProperty cdocreo:E55 .
+
