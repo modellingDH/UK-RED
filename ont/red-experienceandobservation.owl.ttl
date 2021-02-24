@@ -10,10 +10,10 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix linkedevent: <http://linkedevent.org/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix hint: <http://www.bigdata.com/queryHints#> .
 @prefix ceo: <http://readit-project/ontology/> .
 @prefix reo: <http://readit-project/ont/datamodel#> .
-@prefix cdocreo: <http://dataforhistory.org/read-it-ongoing/class/> .
+@prefix crmreocls: <http://dataforhistory.org/read-it-ongoing/class/> .
+@prefix crmreoprop: <http://dataforhistory.org/read-it-ongoing/property/> .
 @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
 @base <http://data.open.ac.uk/ontology/red/> .
 
@@ -39,16 +39,14 @@ foaf:Person owl:equivalentClass reo:Person .
 
 ################# READ-IT CIDOC-CRM Reading Experience Ontology V1.2 mappings ######################
 
-:Religion owl:equivalentClass cdocreo:REO15 .
-:Address owl:equivalentClass cdocreo:REO9 .
-:Gender owl:equivalentClass cdocreo:REO5 .
-:Experience_Reader owl:equivalentClass cdocreo:REO12, cdocreo:REO2, crm:E7 .
+:Religion owl:equivalentClass crmreocls:REO15 .
+:Address owl:equivalentClass crmreocls:REO9 .
+:Gender owl:equivalentClass crmreocls:REO5 .
+:Experience_Reader owl:equivalentClass crmreocls:REO12, crmreocls:REO2, crm:E7 .
 foaf:Person owl:equivalentClass crm:E21 .
 
-:originCountry owl:inverseOf cdocreo:readP2 .
-:occupation owl:equivalentProperty cdocreo:readP1 .
-:religion owl:inverseOf cdocreo:readP4 .
+:originCountry owl:inverseOf crmreoprop:readP2 .
+:occupation owl:equivalentProperty crmreoprop:readP1 .
+:religion owl:inverseOf crmreoprop:readP4 .
 
-:frequency owl:equivalentProperty cdocreo:E7 .
-:reader_engagement owl:equivalentProperty cdocreo:E55 .
 

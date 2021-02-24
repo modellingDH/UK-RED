@@ -236,7 +236,7 @@ linkedevent:date rdf:type owl:DatatypeProperty ;
                                            rdf:type owl:Class
                                          ] ;
                      rdfs:subClassOf :Experience ;
-                     rdfs:comment "The distinction between Experience-Listener and Experience-Reader is present in the UK-RED portal but it is not reflected in the data, nor are examples given, therefore this class will not be axiomatised."@en ;
+                     rdfs:comment "The distinction between Experience-Listener and Experience-Reader is present in the UK-RED portal: however, it is not reflected in the data, nor are examples given. Therefore, the axiomatisation of this class is predicated on the assumptions of other properties being described in the portal (such as listener_engagement)."@en ;
                      rdfs:label "listener experience"@en .
 
 
@@ -255,7 +255,7 @@ linkedevent:date rdf:type owl:DatatypeProperty ;
                                          rdf:type owl:Class
                                        ] ;
                    rdfs:subClassOf :Experience ;
-                   rdfs:comment "The distinction between Experience-Listener and Experience-Reader is present in the UK-RED portal but it is not reflected in the data, nor are examples given, therefore this class will not be axiomatised."@en ;
+                   rdfs:comment "The distinction between Experience-Listener and Experience-Reader is present in the UK-RED portal: however, it is not reflected in the data, nor are examples given. Therefore, the axiomatisation of this class is predicated on the assumptions of other properties being described in the portal (such as listener_engagement)."@en ;
                    rdfs:label "reader experience"@en .
 
 
