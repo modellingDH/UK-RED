@@ -42,8 +42,9 @@ foaf:Person owl:equivalentClass reo:Person .
 :Religion owl:equivalentClass crmreocls:REO15 .
 :Address owl:equivalentClass crmreocls:REO9 .
 :Gender owl:equivalentClass crmreocls:REO5 .
-:Experience_Reader owl:equivalentClass crmreocls:REO12, crmreocls:REO2, crm:E7 .
-foaf:Person owl:equivalentClass crm:E21 .
+:Experience_Reader owl:equivalentClass crmreocls:REO12, crmreocls:REO2 ;
+ rdfs:subClassOf crm:E7_Activity .
+foaf:Person owl:equivalentClass crm:E21_Person .
 
 :originCountry owl:inverseOf crmreoprop:readP2 .
 :occupation owl:equivalentProperty crmreoprop:readP1 .
