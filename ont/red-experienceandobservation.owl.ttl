@@ -1,21 +1,19 @@
 @prefix : <http://data.open.ac.uk/ontology/red/> .
-@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix cito: <http://purl.org/spar/cito/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix linkedevent: <http://linkedevent.org/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix ceo: <http://readit-project/ontology/> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix reo: <http://readit-project/ont/datamodel#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix hint: <http://www.bigdata.com/queryHints#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix crmreocls: <http://dataforhistory.org/read-it-ongoing/class/> .
 @prefix crmreoprop: <http://dataforhistory.org/read-it-ongoing/property/> .
-@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
-@base <http://data.open.ac.uk/ontology/red/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
 
 
 #################################################################
@@ -23,31 +21,39 @@
 #################################################################
 
 
+################# READ-IT CIDOC-CRM Reading Experience Ontology V1.2 mappings ######################
+
+:occupation owl:equivalentProperty crmreoprop:readP1 .
+:originCountry owl:inverseOf crmreoprop:readP2 .
+:religion owl:inverseOf crmreoprop:readP4 .
+
+:Address owl:equivalentClass crmreocls:REO9 .
+:Gender owl:equivalentClass crmreocls:REO5 .
+:Religion owl:equivalentClass crmreocls:REO15 .
+
+
+################# READ-IT Reading Experience Ontology V2.0 mappings ######################
+
+foaf:Person owl:equivalentClass crm:E21_Person .
+
+
 
 ################# READ-IT Crowdsourcing Experience Ontology mappings ######################
 
 :Document rdfs:subClassOf ceo:CreativeWork .
 :Document owl:equivalentClass ceo:Resource .
-:Experience owl:equivalentClass ceo:Observation .
 
 
-################# READ-IT Reading Experience Ontology V2.0 mappings ######################
+################# Cross-vocabulary mappings (as disjoint unions) ######################
 
-foaf:Person owl:equivalentClass reo:Person .
-:Experience owl:equivalentClass reo:StateOfMind, reo:ReadingProcess .
+:Experience owl:disjointUnionOf ( ceo:Observation
+                                  crm:E7_Activity
+                                ) .
 
-
-################# READ-IT CIDOC-CRM Reading Experience Ontology V1.2 mappings ######################
-
-:Religion owl:equivalentClass crmreocls:REO15 .
-:Address owl:equivalentClass crmreocls:REO9 .
-:Gender owl:equivalentClass crmreocls:REO5 .
-:Experience_Reader owl:equivalentClass crmreocls:REO12, crmreocls:REO2 ;
- rdfs:subClassOf crm:E7_Activity .
-foaf:Person owl:equivalentClass crm:E21_Person .
-
-:originCountry owl:inverseOf crmreoprop:readP2 .
-:occupation owl:equivalentProperty crmreoprop:readP1 .
-:religion owl:inverseOf crmreoprop:readP4 .
+:Experience_Reader owl:disjointUnionOf ( crmreocls:REO12
+                                         crmreocls:REO2
+                                         reo:ReadingProcess
+                                         reo:StateOfMind
+                                       ) .
 
 
