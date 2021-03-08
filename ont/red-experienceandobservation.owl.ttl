@@ -47,6 +47,7 @@ foaf:Person owl:equivalentClass crm:E21_Person .
 ################# Cross-vocabulary mappings (as disjoint unions) ######################
 
 :Experience owl:disjointUnionOf ( ceo:Observation
+                                  ceo:Engagement
                                   crm:E7_Activity
                                 ) .
 
